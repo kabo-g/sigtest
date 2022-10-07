@@ -8,7 +8,7 @@
     <div class="form-div">
       <form class="form" action="#" method="post">
 
-        {% load csrf_token %}
+        {% csrf_token %}
 
         <label for="firstname">First name : </label>
         <input type="text" name="firstname" required><br>
@@ -20,13 +20,35 @@
         <input type="email" name="email" required><br>
 
         <label for="signature">Signature : </label>
-        <div class="signature_div" name="signature">
+        <div id="signature" name="signature">
 
         </div>
 
-        <button type="submit" class="login" name="save">Save</button>
+        <button id="preview">Preview</button>
+
+      	<img src="" id="signaturePreview">
+
+
+      	<a href="" id="download" download>Download</a>
+
+
+        <button type="submit" class="btn" name="save">Save</button>
 
       </form>
     </div>
   </div>
+
+  <!-- <script type="text/javascript">
+    var signature = $("#signature").jSignature({'UndoButton' : true});
+
+    $("#preview").click(function(){
+      var data = signature.jSignature("getData", "image");
+      $("#signaturePreview").attr('src', 'data: ' + data);
+    })
+
+    $("#download").click(function(){
+      var image = $("#signaturePreview")[0];
+      this.href = image.src;
+    })
+    </script> -->
 {% endblock content %}
