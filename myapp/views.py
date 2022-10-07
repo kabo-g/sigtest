@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseError
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 from . models import Signature
@@ -9,8 +9,8 @@ from . models import Signature
 class SignatureView(View):
 
     model = Signature
-    template_name = ""
-    context = {}
+    template_name = "index.html"
+    context = {"model" : model}
 
     def get(self, request, *args, **kwargs):
 
@@ -20,3 +20,9 @@ class SignatureView(View):
     def post(self, request, *args, **kwargs):
 
         return redirect(request.path)
+
+
+
+class EditSignature(View):
+
+	template_name = 'data.html'
