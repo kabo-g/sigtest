@@ -110,7 +110,7 @@ tr:nth-child(odd){
 
 tr:nth-child(even){
 	background: var(--main-color);
-	
+
 }
 
 .vertical-navbar > ul{
@@ -149,12 +149,12 @@ tr:nth-child(even){
 	max-width: 80%;
 }
 
-#signature{
+.signature_div{
 	max-width: 40%;
 	background: #EDFE71;
 	border: none;
 	border-radius: 5px;
-	height: 100px;
+	height: 100px
 	padding: 0 20px;
 	left: 50%;
 }
@@ -166,30 +166,6 @@ tr:nth-child(even){
 	align-items: center;
 	justify-content: center;
 	align-content: center;
-}
-
-.dashboard-apps{
-	display: grid;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-	grid-template-columns: repeat(3, 1fr);
-
-	padding: 30px;
-}
-
-
-.welcome{
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-}
-
-.welcome-header{
-	padding-top: 4%;
-
-
 }
 
 .form-div{
@@ -216,37 +192,13 @@ tr:nth-child(even){
 	border: none;
 }
 
-input, select{
-	width: 100%;
+input{
+	width: 80%;
 	background: #EDFE71;
 	border: none;
 	border-radius: 5px;
 	height: 40px;
 	padding: 0 20px;
-}
-
-
-select{
-	width: 80%;
-	margin: 10px 0;
-	padding: 0 20px;
-}
-
-
-.boxes{
-	display: inline-block;
-}
-
-input[type=radio]{
-	width: 10px;
-	height: 10px;
-	padding: 15px 0 0 0;
-}
-
-input[type=checkbox]{
-	width: 10px;
-	height: 10px;
-	padding: 15px 0 0 0;
 }
 
 
@@ -259,135 +211,4 @@ input[type=checkbox]{
 	border-radius: 5px;
 	color: var(--white);
 	font-size: 17px;
-}
-
-.app{
-	width: 330px;
-	height: 150px;
-	border: none;
-	border-radius: 5px;
-	background: #3A1622;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	text-align: center;
-	margin: 10px;
-}
-
-.app_h3{
-	color: var(--white);
-	font-size: 15px;
-	top: 50%;
-}
-
-
-p >a{
-	color: #1B4B8B;
-	font-size: 10px;
-	margin: 10px;
-}
-
-
-.a4{
-	/*width: 592px;*/
-	color: var(--black);
-	display: block;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-	font-size: 12px;
-	padding: 0 5%;
-	/*text-align: center;*/
-}
-
-
-
-.header1{
-	font-size: 20px;
-	font-weight: bolder;
-	text-align: center;
-	margin: 20px 0;
-}
-
-.header2{
-	font-size: 16px;
-	font-weight: bolder;
-	text-decoration: underline;
-	text-align: center;
-	margin: 20px 0;
-}
-
-
-.header3{
-	font-size: 16px;
-	font-weight: bolder;
-	text-decoration: underline;
-	/*text-align: center;*/
-	margin: 20px 0;
-}
-
-.pdetails{
-	display: flex;
-	margin: 20px 0;
-}
-
-span{
-	font-weight: bolder;
-}
-
-.pdetails > p{
-	padding: 0 10px;
-}
-
-.signage{
-	display: grid;
-	width: 592px;
-	/*justify-content: center;*/
-	/*align-items: center;*/
-	grid-template-columns: repeat(2, 1fr);
-	padding: 20px 0;
-}
-
-.sign{
-	display: flex;
-}
-
-.sign > p{
-	padding: 0 10px;
-}
-
-.print {
-	border: none;
-	background: inherit;
-}
-
-.print:hover{
-	background-color: var(--main-color);
-}
-
-.print {
-	border: none;
-}
-
-
-.usermanagement-form{
-	
-}
-
-
-footer{
-	margin-top: 5px;
-	bottom: 0;
-}
-
-footer > .footer-div{
-
-	position: relative;
-	background: var(--main-color);
-	height: 120px;
-	padding: 10px;
-	margin-top: 0px;
-
-
 }

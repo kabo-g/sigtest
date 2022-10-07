@@ -19,6 +19,21 @@ class SignatureView(View):
 
     def post(self, request, *args, **kwargs):
 
+        if request.method == "POST":
+            firstname = request.POST.get('firstname')
+            lastname = request.POST.get('lastname')
+            email = request.POST.get('email')
+            signature = request.POST.get('signature')
+
+            self.model.create(
+                firstname = firstname, lastname = lastname,
+                email = email, signature = signature
+            )
+            self.model.save()
+
+            if self.model.save():
+                print("successfully saved to db")
+
         return redirect(request.path)
 
 
