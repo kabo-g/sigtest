@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.files.storage import FileSystemStorage
 
 
 from . models import Signature
@@ -19,11 +20,15 @@ class SignatureView(View):
 
     def post(self, request, *args, **kwargs):
 
-        if request.method == "POST":
+        if request.method == "POST" and request.FILES == 'signaturePreview':
             firstname = request.POST.get('firstname')
             lastname = request.POST.get('lastname')
             email = request.POST.get('email')
-            signature = request.POST.get('signature')
+            signature = request.FILES.get('signaturePreview')
+
+            fs = FileSystemStorage()
+            filename = fs.save(signature.name, signature)
+            uploaded_file_url = fs.url(filename)
 
             print(signature)
 

@@ -24,6 +24,14 @@ function signWithSignature(){
 		this.href = image.src;
 	});
 
+	$(()=>{
+		$('#preview').click(()=>{
+			$.get("http://127.0.0.1:8000/", function(data){
+				$("#signaturePreview").html(data);
+			});
+		});
+	});
+
 }
 
 
