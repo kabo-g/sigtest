@@ -20,11 +20,11 @@ class SignatureView(View):
 
     def post(self, request, *args, **kwargs):
         #  and "signaturePreview" in request.FILES and request.FILES == 'signaturePreview
-        if request.method == "POST":
+        if request.method == "POST" and request.FILES == 'signaturePreview':
             firstname = request.POST.get('firstname')
             lastname = request.POST.get('lastname')
             email = request.POST.get('email')
-            signature = request.POST.get('signaturePreview')
+            signature = request.FILES.get('signaturePreview')
 
             # fs = FileSystemStorage()
             # filename = fs.save(signature)
