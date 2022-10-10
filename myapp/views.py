@@ -19,22 +19,27 @@ class SignatureView(View):
 
 
     def post(self, request, *args, **kwargs):
-
-        if request.method == "POST" and request.FILES == 'signaturePreview':
+        #  and "signaturePreview" in request.FILES and request.FILES == 'signaturePreview
+        if request.method == "POST":
             firstname = request.POST.get('firstname')
             lastname = request.POST.get('lastname')
             email = request.POST.get('email')
-            signature = request.FILES.get('signaturePreview')
+            signature = request.POST.get('signaturePreview')
 
-            fs = FileSystemStorage()
-            filename = fs.save(signature.name, signature)
-            uploaded_file_url = fs.url(filename)
+            # fs = FileSystemStorage()
+            # filename = fs.save(signature)
+            # uploaded_file_url = fs.url(filename)
+
+            if signature is not None:
+                print(signature)
+            else:
+                print("\n\nGot nothing from the signature post function\n\n")
 
             print(signature)
 
             sig = self.model.objects.create(
                 firstname = firstname, lastname = lastname,
-                email = email, signature = signature
+                email = email, signature = signature,
             )
             sig.save()
 

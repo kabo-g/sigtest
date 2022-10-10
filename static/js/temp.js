@@ -26,8 +26,10 @@ function signWithSignature(){
 
 	$(()=>{
 		$('#preview').click(()=>{
-			$.get("http://127.0.0.1:8000/", function(data){
-				$("#signaturePreview").html(data);
+			$.get("http://127.0.0.1:8000/", function(image){
+				var image = $("#signaturePreview")[0];
+				this.href = image.src;
+				$("#signaturePreview").html(image);
 			});
 		});
 	});
