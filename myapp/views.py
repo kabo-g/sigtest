@@ -20,11 +20,11 @@ class SignatureView(View):
 
     def post(self, request, *args, **kwargs):
         #  and "signaturePreview" in request.FILES and request.FILES == 'signaturePreview
-        if request.method == "POST" and request.FILES == 'signaturePreview':
-            firstname = request.POST.get('firstname')
-            lastname = request.POST.get('lastname')
-            email = request.POST.get('email')
-            signature = request.FILES.get('signaturePreview')
+        if request.method == "POST":
+            # firstname = request.POST.get('firstname')
+            # lastname = request.POST.get('lastname')
+            # email = request.POST.get('email')
+            signature = request.FILES.get("upload", None)
 
             # fs = FileSystemStorage()
             # filename = fs.save(signature)
@@ -38,8 +38,9 @@ class SignatureView(View):
             print(signature)
 
             sig = self.model.objects.create(
-                firstname = firstname, lastname = lastname,
-                email = email, signature = signature,
+                # firstname = firstname, lastname = lastname,
+                # email = email,
+                signature = signature,
             )
             sig.save()
 
